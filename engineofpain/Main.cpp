@@ -8,7 +8,7 @@
 
 int main() {
 	
-	std::cout << "Fuck you haydon\n";
+	std::cout << "Fuck you haydonian\n";
 	std::cout << "now this is the story all about how\nmy life got flipped turned upside down.\n";
 	std::cerr << "ENGINE PAIN\n";
 
