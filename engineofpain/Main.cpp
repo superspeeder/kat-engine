@@ -1,16 +1,35 @@
 // ENGINE OF PAIN aka KatEngine
 
-#include <GL/glew.h>
-#include <GLFW/glfw3.h>
-
+#include "Main.h"
 
 #include <iostream>
+#include <stdexcept>
+
+void MainApp::create() {
+	glClearColor(1.0f, 0.0f, 1.0f, 1.0f);
+}
+
+void MainApp::destroy() {
+
+}
+
+void MainApp::render() {
+	glClear(GL_COLOR_BUFFER_BIT);
+}
+
+
 
 int main() {
 	
-	std::cout << "Fuck you haydonian\n";
-	std::cout << "now this is the story all about how\nmy life got flipped turned upside down.\n";
-	std::cerr << "ENGINE PAIN\n";
+	MainApp *app = new MainApp();
 
+	try {
+		app->launch();
+	}
+	catch (std::exception& e) {
+		std::cerr << e.what() << std::endl;
+	}
+
+	delete app;
 	return 0;
 }
