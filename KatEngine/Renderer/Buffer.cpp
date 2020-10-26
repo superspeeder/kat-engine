@@ -1,5 +1,7 @@
 #include "Buffer.h"
 
+using namespace kat;
+
 Buffer::Buffer(unsigned int size, BufferType target, const void* data, Usage usage) {
 	switch (target) {
 	case BufferType::ArrayBuffer:

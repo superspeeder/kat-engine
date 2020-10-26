@@ -2,6 +2,7 @@
 #include <iostream>
 #include <stdexcept>
 
+using namespace kat;
 
 Window::Window(uint32_t width, uint32_t height, const char* caption) {
 	this->width = width;

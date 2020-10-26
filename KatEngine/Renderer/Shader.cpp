@@ -2,6 +2,7 @@
 #include <sstream>
 #include <iostream>
 
+using namespace kat;
 
 Shader::Shader(const char* path) {
 	// first line should be a directive

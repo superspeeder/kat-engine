@@ -1,5 +1,6 @@
 #include "VertexArray.h"
 
+using namespace kat;
 
 VertexArray::VertexArray() {
 	glGenVertexArrays(1, &m_Handle);

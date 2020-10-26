@@ -1,6 +1,8 @@
 #include "Application.h"
 #include <stdexcept>
 
+using namespace kat;
+
 #ifdef KAT_USE_WINDOW_MACROS
 Application::Application() {
 }

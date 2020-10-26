@@ -3,7 +3,7 @@
 #include <fstream>
 #include <sstream>
 
-std::string readFile(const char* path) {
+std::string kat::readFile(const char* path) {
 	std::ifstream t(path);
 	std::stringstream buffer;
 	buffer << t.rdbuf();
@@ -11,7 +11,7 @@ std::string readFile(const char* path) {
 	return buffer.str();
 }
 
-Directive parseDirective(const char* line) {
+kat::Directive kat::parseDirective(const char* line) {
 	std::string type;
 	std::string value;
 
@@ -35,6 +35,6 @@ Directive parseDirective(const char* line) {
 	return Directive{ type,value };
 }
 
-bool lineContainsDirective(const char* line) {
+bool kat::lineContainsDirective(const char* line) {
 	return line[0] == '#';
 }

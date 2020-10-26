@@ -3,10 +3,12 @@
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 
-#include "Application.h"
-#include "VertexArray.h"
-#include "Buffer.h"
-#include "Shader.h"
+#include <Application.h>
+#include <Renderer/VertexArray.h>
+#include <Renderer/Buffer.h>
+#include <Renderer/Shader.h>
+
+using namespace kat;
 
 class MainApp : public Application {
 
