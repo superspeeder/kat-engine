@@ -35,6 +35,14 @@ void MainApp::create() {
 	vao->enable(0);
 	vao->unbind();
 	testBuffer->unbind();
+
+	shader = new ShaderProgram();
+	Shader* vsh = new Shader("res/shaders/vertex0.glsl");
+	Shader* fsh = new Shader("res/shaders/fragment0.glsl");
+
+	shader->pushShader(vsh);
+	shader->pushShader(fsh);
+	shader->linkProgram();
 }
 
 void MainApp::destroy() {
@@ -44,6 +52,7 @@ void MainApp::destroy() {
 void MainApp::render() {
 	glClear(GL_COLOR_BUFFER_BIT);
 
+	shader->use();
 	vao->bind();
 	glDrawArrays(GL_TRIANGLES, 0, 9);
 	vao->unbind();

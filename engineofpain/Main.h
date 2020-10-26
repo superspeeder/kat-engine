@@ -6,6 +6,7 @@
 #include "Application.h"
 #include "VertexArray.h"
 #include "Buffer.h"
+#include "Shader.h"
 
 class MainApp : public Application {
 
@@ -20,6 +21,7 @@ public:
 
 	Buffer* testBuffer;
 	VertexArray* vao;
+	ShaderProgram* shader;
 
 
 };
