@@ -4,6 +4,9 @@
 
 
 Window::Window(uint32_t width, uint32_t height, const char* caption) {
+	this->width = width;
+	this->height = height;
+	this->caption = caption;
 	m_Window = glfwCreateWindow(width, height, caption, nullptr, nullptr);
 	if (!m_Window) {
 		glfwTerminate();
@@ -12,6 +15,9 @@ Window::Window(uint32_t width, uint32_t height, const char* caption) {
 }
 
 Window::Window(uint32_t width, uint32_t height, const char* caption, GLFWmonitor* monitor) {
+	this->width = width;
+	this->height = height;
+	this->caption = caption;
 	m_Window = glfwCreateWindow(width, height, caption, monitor, nullptr);
 	if (!m_Window) {
 		glfwTerminate();
@@ -20,6 +26,9 @@ Window::Window(uint32_t width, uint32_t height, const char* caption, GLFWmonitor
 }
 
 Window::Window(uint32_t width, uint32_t height, const char* caption, Window* share) {
+	this->width = width;
+	this->height = height;
+	this->caption = caption;
 	m_Window = glfwCreateWindow(width, height, caption, nullptr, share->m_Window);
 	if (!m_Window) {
 		glfwTerminate();
@@ -28,6 +37,9 @@ Window::Window(uint32_t width, uint32_t height, const char* caption, Window* sha
 }
 
 Window::Window(uint32_t width, uint32_t height, const char* caption, GLFWmonitor* monitor, Window* share) {
+	this->width = width;
+	this->height = height;
+	this->caption = caption;
 	m_Window = glfwCreateWindow(width, height, caption, monitor, share->m_Window);
 	if (!m_Window) {
 		glfwTerminate();
@@ -53,6 +65,20 @@ bool Window::shouldWindowClose() {
 
 void Window::MakeContextCurrent() {
 	glfwMakeContextCurrent(m_Window);
+}
+
+void Window::setKeyCallback(GLFWkeyfun func) {
+	glfwSetKeyCallback(m_Window, func);
+}
+
+void Window::setMouseButtonCallback(GLFWmousebuttonfun func) {
+	glfwSetMouseButtonCallback(m_Window, func);
+}
+
+
+void Window::close()
+{
+	glfwSetWindowShouldClose(m_Window, GLFW_TRUE);
 }
 
 void Window::init() {

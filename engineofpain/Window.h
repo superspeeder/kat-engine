@@ -5,6 +5,16 @@
 #include <cstdint>
 
 
+struct GLFWCallback {
+	struct Key { GLFWkeyfun func; };
+	struct CursorPos { GLFWcursorposfun func;  };
+	struct CursorEnter { GLFWcursorenterfun func; };
+	struct MouseButton { GLFWmousebuttonfun func; };
+	struct Scroll { GLFWscrollfun func; };
+	struct PathDrop { GLFWdropfun func; };
+};
+
+
 class Window
 {
 private:
@@ -28,6 +38,10 @@ public:
 	bool shouldWindowClose();
 	void MakeContextCurrent();
 
+	void setKeyCallback(GLFWkeyfun func);
+	void setMouseButtonCallback(GLFWmousebuttonfun func);
+
+	void close();
 
 	static void init();
 };

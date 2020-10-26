@@ -27,9 +27,8 @@ private:
 	std::string m_WindowTitle;
 #endif
 
-protected:
-	Window* m_Window;
 public:
+	Window* m_Window;
 
 #ifdef KAT_USE_WINDOW_MACROS
 	Application();
@@ -39,6 +38,8 @@ public:
 
 	void launch();
 
+	inline virtual Window* getWindow() { return m_Window; };
+	
 	virtual void create() { };
 	virtual void destroy() { };
 	
