@@ -4,9 +4,10 @@
 #include <GLFW/glfw3.h>
 
 #include <Application.h>
-#include <Renderer/VertexArray.h>
-#include <Renderer/Buffer.h>
-#include <Renderer/Shader.h>
+#include <Renderer/Draw/VertexArray.h>
+#include <Renderer/Draw/Buffer.h>
+#include <Renderer/Draw/Shader.h>
+#include <Renderer/Draw/Texture.h>
 
 using namespace kat;
 
@@ -24,6 +25,7 @@ public:
 	Buffer* testBuffer;
 	VertexArray* vao;
 	ShaderProgram* shader;
+	Texture* texture;
 
 
 };

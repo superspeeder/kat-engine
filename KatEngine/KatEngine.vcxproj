@@ -12,19 +12,23 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Application.cpp" />
-    <ClCompile Include="Renderer\Buffer.cpp" />
-    <ClCompile Include="Renderer\Shader.cpp" />
-    <ClCompile Include="Renderer\VertexArray.cpp" />
+    <ClCompile Include="Renderer\Draw\Buffer.cpp" />
+    <ClCompile Include="Renderer\Camera\Camera.cpp" />
+    <ClCompile Include="Renderer\Draw\Shader.cpp" />
+    <ClCompile Include="Renderer\Draw\Texture.cpp" />
+    <ClCompile Include="Renderer\Draw\VertexArray.cpp" />
     <ClCompile Include="Utils.cpp" />
-    <ClCompile Include="Window.cpp" />
+    <ClCompile Include="Renderer\Window.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Application.h" />
-    <ClInclude Include="Renderer\Buffer.h" />
-    <ClInclude Include="Renderer\Shader.h" />
-    <ClInclude Include="Renderer\VertexArray.h" />
+    <ClInclude Include="Renderer\Draw\Buffer.h" />
+    <ClInclude Include="Renderer\Camera\Camera.h" />
+    <ClInclude Include="Renderer\Draw\Shader.h" />
+    <ClInclude Include="Renderer\Draw\Texture.h" />
+    <ClInclude Include="Renderer\Draw\VertexArray.h" />
     <ClInclude Include="Utils.h" />
-    <ClInclude Include="Window.h" />
+    <ClInclude Include="Renderer\Window.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

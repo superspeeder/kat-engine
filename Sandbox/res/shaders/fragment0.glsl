@@ -1,8 +1,12 @@
 #shader fragment
 #version 450
 
+in vec2 uv;
+
 out vec4 color;
 
+uniform sampler2D tex0;
+
 void main() {
-	color = vec4(1, 1, 0, 1);
+	color = texture(tex0, uv);
 }

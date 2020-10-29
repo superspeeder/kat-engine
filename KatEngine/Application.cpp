@@ -1,6 +1,8 @@
 #include "Application.h"
 #include <stdexcept>
 
+#include "Renderer/Draw/Texture.h"
+
 using namespace kat;
 
 #ifdef KAT_USE_WINDOW_MACROS
@@ -31,6 +33,8 @@ void Application::init() {
 		glfwTerminate();
 		throw std::runtime_error("GLEW could not initialize");
 	}
+
+	Texture::init();
 }
 
 void Application::launch() {

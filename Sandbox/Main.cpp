@@ -20,19 +20,24 @@ void MainApp::create() {
 	glClearColor(1.0f, 0.0f, 1.0f, 1.0f);
 
 
-	GLfloat data[3 * 3]{
-		0,0,0,
-		1,1,0,
-		1,0,0
+	GLfloat data[6 * 5]{
+		-1,-1,0,0,0,
+		 1, 1,0,1,1,
+		 1,-1,0,1,0,
+		-1,-1,0,0,0,
+		-1, 1,0,0,1,
+		 1, 1,0,1,1
 	};
 
-	testBuffer = new Buffer(3 * 3 * sizeof(GLfloat), BufferType::ArrayBuffer, data);
+	testBuffer = new Buffer(6 * 5 * sizeof(GLfloat), BufferType::ArrayBuffer, data);
 
 	vao = new VertexArray();
 	vao->bind();
 	testBuffer->bind();
-	vao->attribute(0, 3, DataType::Float, false, 3 * sizeof(float), 0);
+	vao->attribute(0, 3, DataType::Float, false, 5 * sizeof(float), 0);
+	vao->attribute(1, 2, DataType::Float, false, 5 * sizeof(float), (const void*)(3 * sizeof(float)));
 	vao->enable(0);
+	vao->enable(1);
 	vao->unbind();
 	testBuffer->unbind();
 
@@ -43,6 +48,10 @@ void MainApp::create() {
 	shader->pushShader(vsh);
 	shader->pushShader(fsh);
 	shader->linkProgram();
+
+	texture = new Texture("res/textures/tile0.png", GL_NEAREST);
+
+
 }
 
 void MainApp::destroy() {
@@ -54,6 +63,7 @@ void MainApp::render() {
 
 	shader->use();
 	vao->bind();
+	texture->bind();
 	glDrawArrays(GL_TRIANGLES, 0, 9);
 	vao->unbind();
 }
